@@ -5,13 +5,20 @@
   {% from "includes/_formhelpers.html" import render_field %}
   <form method="POST" action="">
     <div class="form-group">
-      {{render_field(form.name, class_="form-control")}}
-    </div>
-    <div class="form-group">
       {{render_field(form.email, class_="form-control")}}
     </div>
-    <div class="form-group">
-      {{render_field(form.username, class_="form-control")}}
+    <div class = "form-group">
+      <label for="deparment">Select Department:</label>
+      <select class="form-control" name="department">
+        <option value = "Businesses">Businesses</option>
+        <option value = "Contractor">Contractor</option>
+        <option value = "Permits">Permits</option>
+        <option value = "Police">Police</option>
+        <option value = "Power">Power</option>
+        <option value = "Sewage">Sewage</option>
+        <option value = "Transportation">Transportation</option>
+        <option value = "Water">Water</option>
+      </select>
     </div>
     <div class="form-group">
       {{render_field(form.password, class_="form-control")}}

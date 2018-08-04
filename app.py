@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, redirect, url_for, session, req
 #from data import Articles
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
+from wtforms.fields.html5 import DateField
 from passlib.hash import sha256_crypt
 from functools import wraps
 
@@ -10,7 +11,7 @@ app = Flask(__name__)
 # Config MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '123456'
+app.config['MYSQL_PASSWORD'] = '1122'
 app.config['MYSQL_DB'] = 'myflaskapp'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
@@ -66,9 +67,10 @@ def article(id):
 
 # Register Form Class
 class RegisterForm(Form):
-    name = StringField('Name', [validators.Length(min=1, max=50)])
-    username = StringField('Username', [validators.Length(min=4, max=25)])
-    email = StringField('Email', [validators.Length(min=6, max=50)])
+    # name = StringField('Name', [validators.Length(min=1, max=50)])
+    # username = StringField('Username', [validators.Length(min=4, max=25)])
+    email = StringField('Email', [validators.Length(min=6, max=80)])
+    # department = StringField('department', [validators.Length(min=6, max=80)])
     password = PasswordField('Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords do not match')
@@ -81,16 +83,17 @@ class RegisterForm(Form):
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        name = form.name.data
+        # name = form.name.data
         email = form.email.data
-        username = form.username.data
+        # username = form.username.data
+        department = request.form.getlist('department')
         password = sha256_crypt.encrypt(str(form.password.data))
 
         # Create cursor
         cur = mysql.connection.cursor()
 
         # Execute query
-        cur.execute("INSERT INTO users(name, email, username, password) VALUES(%s, %s, %s, %s)", (name, email, username, password))
+        cur.execute("INSERT INTO users(username, department, password) VALUES(%s, %s, %s)", (email, department, password))
 
         # Commit to DB
         mysql.connection.commit()
@@ -169,37 +172,49 @@ def dashboard():
     cur = mysql.connection.cursor()
 
     # Get articles
-    result = cur.execute("SELECT * FROM articles")
+    result = cur.execute("SELECT * FROM activities")
 
-    articles = cur.fetchall()
+    # articles = cur.fetchall()
 
     if result > 0:
-        return render_template('dashboard.html', articles=articles)
+        # return render_template('dashboard.html', articles=articles)
+        return render_template('dashboard.html')
     else:
         msg = 'No Articles Found'
         return render_template('dashboard.html', msg=msg)
     # Close connection
     cur.close()
 
-# Article Form Class
-class ArticleForm(Form):
-    title = StringField('Title', [validators.Length(min=1, max=200)])
-    body = TextAreaField('Body', [validators.Length(min=30)])
 
-# Add Article
-@app.route('/add_article', methods=['GET', 'POST'])
+# Activity Form Class
+class ActivityForm(Form):
+    title = StringField('Name', [validators.Length(min=1, max=200)])
+    min_time_start = DateField('Min Start Time', format='%Y-%m-%d') 
+    max_time_start = DateField('Max Start Time', format='%Y-%m-%d')
+    min_time_end = DateField('Min End Time', format='%Y-%m-%d')
+    max_time_end = DateField('Max End Time', format='%Y-%m-%d')
+    duration_start = DateField('Duration Start Time', format='%Y-%m-%d')
+    duration_end = DateField('Duration Start Time', format='%Y-%m-%d')
+
+# Add Activity
+@app.route('/add_activity', methods=['GET', 'POST'])
 @is_logged_in
-def add_article():
-    form = ArticleForm(request.form)
+def add_activity():
+    form = ActivityForm(request.form)
     if request.method == 'POST' and form.validate():
         title = form.title.data
-        body = form.body.data
+        min_time_start = form.min_time_start.data.strftime('%Y-%m-%d')
+        max_time_start = form.max_time_start.data.strftime('%Y-%m-%d')
+        min_time_end = form.min_time_end.data.strftime('%Y-%m-%d')
+        max_time_end = form.max_time_end.data.strftime('%Y-%m-%d')
 
         # Create Cursor
         cur = mysql.connection.cursor()
-
+        
         # Execute
-        cur.execute("INSERT INTO articles(title, body, author) VALUES(%s, %s, %s)",(title, body, session['username']))
+        cur.execute("SELECT id from users where username = %s", [session.username])
+        userid = cur.fetchone()
+        cur.execute("INSERT INTO activities(user_id, activity) VALUES(%d, %s)", (userid, title))
 
         # Commit to DB
         mysql.connection.commit()
@@ -207,72 +222,107 @@ def add_article():
         #Close connection
         cur.close()
 
-        flash('Article Created', 'success')
+        # To do - Add activity to the rdf
+
+        flash('Activity Created', 'success')
 
         return redirect(url_for('dashboard'))
+    return render_template('add_activity.html', form=form)
 
-    return render_template('add_article.html', form=form)
+
+
+# Article Form Class
+# class ArticleForm(Form):
+#     title = StringField('Title', [validators.Length(min=1, max=200)])
+#     body = TextAreaField('Body', [validators.Length(min=30)])
+
+# Add Article
+# @app.route('/add_article', methods=['GET', 'POST'])
+# @is_logged_in
+# def add_article():
+#     form = ArticleForm(request.form)
+#     if request.method == 'POST' and form.validate():
+#         title = form.title.data
+#         body = form.body.data
+
+#         # Create Cursor
+#         cur = mysql.connection.cursor()
+
+#         # Execute
+#         cur.execute("INSERT INTO articles(title, body, author) VALUES(%s, %s, %s)",(title, body, session['username']))
+
+#         # Commit to DB
+#         mysql.connection.commit()
+
+#         #Close connection
+#         cur.close()
+
+#         flash('Article Created', 'success')
+
+#         return redirect(url_for('dashboard'))
+
+#     return render_template('add_article.html', form=form)
 
 
 # Edit Article
-@app.route('/edit_article/<string:id>', methods=['GET', 'POST'])
-@is_logged_in
-def edit_article(id):
-    # Create cursor
-    cur = mysql.connection.cursor()
+# @app.route('/edit_article/<string:id>', methods=['GET', 'POST'])
+# @is_logged_in
+# def edit_article(id):
+#     # Create cursor
+#     cur = mysql.connection.cursor()
 
-    # Get article by id
-    result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
+#     # Get article by id
+#     result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
 
-    article = cur.fetchone()
-    cur.close()
-    # Get form
-    form = ArticleForm(request.form)
+#     article = cur.fetchone()
+#     cur.close()
+#     # Get form
+#     form = ArticleForm(request.form)
 
-    # Populate article form fields
-    form.title.data = article['title']
-    form.body.data = article['body']
+#     # Populate article form fields
+#     form.title.data = article['title']
+#     form.body.data = article['body']
 
-    if request.method == 'POST' and form.validate():
-        title = request.form['title']
-        body = request.form['body']
+#     if request.method == 'POST' and form.validate():
+#         title = request.form['title']
+#         body = request.form['body']
 
-        # Create Cursor
-        cur = mysql.connection.cursor()
-        app.logger.info(title)
-        # Execute
-        cur.execute ("UPDATE articles SET title=%s, body=%s WHERE id=%s",(title, body, id))
-        # Commit to DB
-        mysql.connection.commit()
+#         # Create Cursor
+#         cur = mysql.connection.cursor()
+#         app.logger.info(title)
+#         # Execute
+#         cur.execute ("UPDATE articles SET title=%s, body=%s WHERE id=%s",(title, body, id))
+#         # Commit to DB
+#         mysql.connection.commit()
 
-        #Close connection
-        cur.close()
+#         #Close connection
+#         cur.close()
 
-        flash('Article Updated', 'success')
+#         flash('Article Updated', 'success')
 
-        return redirect(url_for('dashboard'))
+#         return redirect(url_for('dashboard'))
 
-    return render_template('edit_article.html', form=form)
+#     return render_template('edit_article.html', form=form)
 
 # Delete Article
-@app.route('/delete_article/<string:id>', methods=['POST'])
-@is_logged_in
-def delete_article(id):
-    # Create cursor
-    cur = mysql.connection.cursor()
+# @app.route('/delete_article/<string:id>', methods=['POST'])
+# @is_logged_in
+# def delete_article(id):
+#     # Create cursor
+#     cur = mysql.connection.cursor()
 
-    # Execute
-    cur.execute("DELETE FROM articles WHERE id = %s", [id])
+#     # Execute
+#     cur.execute("DELETE FROM articles WHERE id = %s", [id])
 
-    # Commit to DB
-    mysql.connection.commit()
+#     # Commit to DB
+#     mysql.connection.commit()
 
-    #Close connection
-    cur.close()
+#     #Close connection
+#     cur.close()
 
-    flash('Article Deleted', 'success')
+#     flash('Article Deleted', 'success')
 
-    return redirect(url_for('dashboard'))
+    # return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
     app.secret_key='secret123'
