@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <table class="table table-dark">
+  	<tr>
+  		<th scope="col">Name</th>
+  		<th scope="col">Department</th>
+  	</tr>
+  	{% for k, v in content.items() %}
+  	  <tr>
+  	  	<td>{{ k }}</td>
+  	  	<td>{{ v }}</td>
+  	  </tr>
+  	{% endfor %}
+  </table>
+{% endblock %}

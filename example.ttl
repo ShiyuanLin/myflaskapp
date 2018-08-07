@@ -1,0 +1,1876 @@
+@prefix : <http://www.semanticweb.org/luolixuan/ontologies/2018/6/untitled-ontology-34#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology.eil.toronto.ca/TOVE2/test_example.ttl> .
+
+<http://ontology.eil.toronto.ca/TOVE2/test_example.ttl> rdf:type owl:Ontology ;
+                                                         owl:imports <http://ontology.eil.utoronto.ca/activity.owl> ,
+                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty> ;
+                                                                            rdfs:domain <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                            rdfs:range <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf <http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty> ;
+                                                                              rdfs:domain <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                              rdfs:range <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://ontology.eil.utoronto.ca/activity.owl#ActivityThing> .
+
+
+###  http://www.w3.org/2006/time#TemporalPosition
+<http://www.w3.org/2006/time#TemporalPosition> rdfs:subClassOf <http://www.w3.org/2006/time#GeneralDateTimeDescription> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_1
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_1> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 01 ;
+                                                                   <http://www.w3.org/2006/time#month> 04 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_10> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 10 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_12
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_12> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 12 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 15 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_17
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_17> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 17 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_2
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_2> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 02 ;
+                                                                   <http://www.w3.org/2006/time#month> 04 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_22
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_22> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 22 ;
+                                                                    <http://www.w3.org/2006/time#month> 04 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_4
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_4> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 04 ;
+                                                                   <http://www.w3.org/2006/time#month> 04 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_6
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_6> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 06 ;
+                                                                   <http://www.w3.org/2006/time#month> 04 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_1
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_1> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 01 ;
+                                                                   <http://www.w3.org/2006/time#month> 08 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_10> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 10 ;
+                                                                    <http://www.w3.org/2006/time#month> 08 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_13
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_13> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 13 ;
+                                                                    <http://www.w3.org/2006/time#month> 08 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 08 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_17
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_17> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 17 ;
+                                                                    <http://www.w3.org/2006/time#month> 08 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_18
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_18> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 18 ;
+                                                                    <http://www.w3.org/2006/time#month> 08 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_2
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_2> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 02 ;
+                                                                   <http://www.w3.org/2006/time#month> 08 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_4
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_4> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 04 ;
+                                                                   <http://www.w3.org/2006/time#month> 08 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_5
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_5> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 05 ;
+                                                                   <http://www.w3.org/2006/time#month> 08 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_6
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_6> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 06 ;
+                                                                   <http://www.w3.org/2006/time#month> 08 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Activity> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Duration> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_12> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_9> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_End> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_15> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_12> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Start> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_9> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_7> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                       <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Start> ;
+                                                                                       <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_Duration> ;
+                                                                                       <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Dec_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_20> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_21> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_20> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                       <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Start> ;
+                                                                                       <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_Duration> ;
+                                                                                       <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Activity> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Duration> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> ;
+                                                                                   <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_End> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_10> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Start> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                       <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Start> ;
+                                                                                       <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_Duration> ;
+                                                                                       <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Business_Jan_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_12
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_12> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 12 ;
+                                                                    <http://www.w3.org/2006/time#month> 12 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_15> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 15 ;
+                                                                    <http://www.w3.org/2006/time#month> 12 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 12 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_18
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_18> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 18 ;
+                                                                    <http://www.w3.org/2006/time#month> 12 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_19
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_19> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 19 ;
+                                                                    <http://www.w3.org/2006/time#month> 12 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_7
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_7> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 07 ;
+                                                                   <http://www.w3.org/2006/time#month> 12 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_9
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_9> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 09 ;
+                                                                   <http://www.w3.org/2006/time#month> 12 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 10 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_11
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_11> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 11 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 12 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_13
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_13> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 13 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 15 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 18 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_19
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_19> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 19 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_21
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_21> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 21 ;
+                                                                    <http://www.w3.org/2006/time#month> 02 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_3
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_3> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 03 ;
+                                                                   <http://www.w3.org/2006/time#month> 02 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_5
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_5> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 05 ;
+                                                                   <http://www.w3.org/2006/time#month> 02 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_7
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_7> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 07 ;
+                                                                   <http://www.w3.org/2006/time#month> 02 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_1
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_1> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 01 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_10> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 10 ;
+                                                                    <http://www.w3.org/2006/time#month> 01 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_12
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_12> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 12 ;
+                                                                    <http://www.w3.org/2006/time#month> 01 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 01 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_22
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_22> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_25
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_25> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 25 ;
+                                                                    <http://www.w3.org/2006/time#month> 01 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_27
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_27> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 27 ;
+                                                                    <http://www.w3.org/2006/time#month> 01 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_3
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_3> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 03 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_4
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_4> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 04 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 06 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_7
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_7> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 07 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 09 ;
+                                                                   <http://www.w3.org/2006/time#month> 01 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_13
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_13> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 13 ;
+                                                                     <http://www.w3.org/2006/time#month> 07 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 15 ;
+                                                                     <http://www.w3.org/2006/time#month> 07 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_16> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 16 ;
+                                                                     <http://www.w3.org/2006/time#month> 07 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_20> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 20 ;
+                                                                     <http://www.w3.org/2006/time#month> 07 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_22
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_22> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 22 ;
+                                                                     <http://www.w3.org/2006/time#month> 07 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 10 ;
+                                                                     <http://www.w3.org/2006/time#month> 06 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_12
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_12> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                     <http://www.w3.org/2006/time#day> 12 ;
+                                                                     <http://www.w3.org/2006/time#month> 06 ;
+                                                                     <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_4
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_4> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 04 ;
+                                                                    <http://www.w3.org/2006/time#month> 06 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_5
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_5> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 05 ;
+                                                                    <http://www.w3.org/2006/time#month> 06 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_6
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_6> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 06 ;
+                                                                    <http://www.w3.org/2006/time#month> 06 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_14
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_14> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 14 ;
+                                                                    <http://www.w3.org/2006/time#month> 05 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 05 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_18
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_18> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 18 ;
+                                                                    <http://www.w3.org/2006/time#month> 05 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 05 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_13
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_13> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 13 ;
+                                                                    <http://www.w3.org/2006/time#month> 11 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_15> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 15 ;
+                                                                    <http://www.w3.org/2006/time#month> 11 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 11 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_22
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_22> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 22 ;
+                                                                    <http://www.w3.org/2006/time#month> 11 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_1
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_1> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 01 ;
+                                                                   <http://www.w3.org/2006/time#month> 10 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_10
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_10> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 10 ;
+                                                                    <http://www.w3.org/2006/time#month> 10 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_14
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_14> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 14 ;
+                                                                    <http://www.w3.org/2006/time#month> 10 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_15
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_15> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 15 ;
+                                                                    <http://www.w3.org/2006/time#month> 10 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 10 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_17
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_17> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 17 ;
+                                                                    <http://www.w3.org/2006/time#month> 10 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_2
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_2> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 02 ;
+                                                                   <http://www.w3.org/2006/time#month> 10 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_4
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_4> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 04 ;
+                                                                   <http://www.w3.org/2006/time#month> 10 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_5
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_5> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 05 ;
+                                                                   <http://www.w3.org/2006/time#month> 10 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_6
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_6> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                   <http://www.w3.org/2006/time#day> 06 ;
+                                                                   <http://www.w3.org/2006/time#month> 10 ;
+                                                                   <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Activity> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Duration> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_End> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_20> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_17> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Start> rdf:type owl:NamedIndividual ,
+                                                                                        <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                      <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Start> ;
+                                                                                      <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_Duration> ;
+                                                                                      <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Apr_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Activity> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Duration> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_17> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_End> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_18> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_17> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Start> rdf:type owl:NamedIndividual ,
+                                                                                        <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_16> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_13> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                      <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Start> ;
+                                                                                      <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_Duration> ;
+                                                                                      <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Aug_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                        <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_13> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_11> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                      <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Start> ;
+                                                                                      <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_Duration> ;
+                                                                                      <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Permits_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_17> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_15> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_12> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Apr_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_13> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Activity> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police> ;
+                                                                                  <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Duration> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_16> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_End> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_20> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Start> rdf:type owl:NamedIndividual ,
+                                                                                        <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_13> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                      <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Start> ;
+                                                                                      <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_Duration> ;
+                                                                                      <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_July_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_16> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_17> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_15> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_14> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Police_Oct_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_7> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_7> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_10> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_7> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_6> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_3> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Jan_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_20> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_22> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_20> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_15> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#July_13> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_July_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_20> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_22> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_20> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_15> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Nov_13> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power_Nov_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_14
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_14> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 14 ;
+                                                                    <http://www.w3.org/2006/time#month> 09 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_16
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_16> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 16 ;
+                                                                    <http://www.w3.org/2006/time#month> 09 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_18
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_18> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 18 ;
+                                                                    <http://www.w3.org/2006/time#month> 09 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_20
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_20> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                                                    <http://www.w3.org/2006/time#day> 20 ;
+                                                                    <http://www.w3.org/2006/time#month> 09 ;
+                                                                    <http://www.w3.org/2006/time#year> 2018 .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Durartion
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Durartion> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_4> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_2> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_6> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_2> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_1> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_Durartion> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Apr_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Power> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_5> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_2> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_6> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_5> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_2> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_1> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Aug_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_5> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_5> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_3> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_10> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_3> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_7> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_3> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_1> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Jan_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Aactivity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Aactivity> rdf:type owl:NamedIndividual ,
+                                                                                            <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> ;
+                                                                                   <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Duration> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10> ;
+                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_5> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_End> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_12> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Start> rdf:type owl:NamedIndividual ,
+                                                                                        <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_5> ;
+                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                      <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Start> ;
+                                                                                      <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_Duration> ;
+                                                                                      <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_June_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_5> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_2> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_6> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_5> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_2> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_1> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sewage_Oct_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Activity> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Duration> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_18> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_End> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_19> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_18> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Start> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_16> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Dec_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                             <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Start> ;
+                                                                                             <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_Duration> ;
+                                                                                             <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Dec_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_19> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_16> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                             <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Start> ;
+                                                                                             <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_Duration> ;
+                                                                                             <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Activity> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Duration> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_25> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_22> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_End> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_27> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_25> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Start> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_22> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_20> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                             <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Start> ;
+                                                                                             <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_Duration> ;
+                                                                                             <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Jan_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Activity> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Duration> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_18> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_End> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_20> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_18> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Start> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_16> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#May_14> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                             <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Start> ;
+                                                                                             <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_Duration> ;
+                                                                                             <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_May_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Activity> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation> ;
+                                                                                         <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Duration> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_18> ;
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_16> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_End> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_20> ;
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_18> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Start> rdf:type owl:NamedIndividual ,
+                                                                                               <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_16> ;
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Sep_14> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                             <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Start> ;
+                                                                                             <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_Duration> ;
+                                                                                             <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Transportation_Sep_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Department> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_10> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_12> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_6> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Apr_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Apr_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_10> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_13> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_6> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Aug_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Aug_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_18> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_15> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_12> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Feb_11> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Feb_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_12> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_9> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_4> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Jan_1> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://www.w3.org/2006/time#DateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Jan_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Activity> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                 <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Duration> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10> ;
+                                                                                 <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_End> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_12> ;
+                                                                            <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Start> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_6> ;
+                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#June_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                              <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                     <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Start> ;
+                                                                                     <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_Duration> ;
+                                                                                     <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_June_End> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Activity
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Activity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_Department> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water> ;
+                                                                                <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#has_TimeInterval> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_TimeInterval> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Duration
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_10> ;
+                                                                                <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_6> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_End
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_End> rdf:type owl:NamedIndividual ,
+                                                                                    <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_15> ;
+                                                                           <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_10> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Start
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Start> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInstant> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMax> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_6> ;
+                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#hasMin> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Oct_4> .
+
+
+###  http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_TimeInterval
+<http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_TimeInterval> rdf:type owl:NamedIndividual ,
+                                                                                             <http://ontology.eil.utoronto.ca/TOVE2/ctime.owl#CDateTimeInterval> ;
+                                                                                    <http://www.w3.org/2006/time#hasBeginning> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Start> ;
+                                                                                    <http://www.w3.org/2006/time#hasDuration> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_Duration> ;
+                                                                                    <http://www.w3.org/2006/time#hasEnd> <http://www.semanticweb.org/luolixuan/ontologies/tove2/test#Water_Oct_End> .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.eil.utoronto.ca/activity.owl"
+     xml:base="http://ontology.eil.utoronto.ca/activity.owl"
+     xmlns:adms="http://www.w3.org/ns/adms#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/">
+    <owl:Ontology rdf:about="http://ontology.eil.utoronto.ca/activity.owl">
+        <adms:relatedDocumentation>Gruninger, M., and Fox, M.S. , (1994), “An Activity Ontology for Enterprise Modelling”, Workshop on Enabling Technologies – Infrastructures for Collaborative Enterprises , West Virginia University.
+http://www.eil.utoronto.ca/wp-content/uploads/enterprise-modelling/papers/gruninger-wetice94-act.pdf</adms:relatedDocumentation>
+        <terms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOVE Activity Ontology as defined in:
+
+Fox, M., Chionglo, J.F., and Fadel, F.G., (1993), &quot;A Common Sense Model of the Enterprise&quot;, Proceedings of the 2nd Industrial Engineering Research Conference , pp. 425-429, Norcross GA: Institute for Industrial Engineers.</terms:description>
+        <vann:preferredNamespacePrefix>act</vann:preferredNamespacePrefix>
+        
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#relatedDocumentation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#relatedDocumentation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#causes -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#causes">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#conjunct -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#conjunct">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#disjunct -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#disjunct">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#enables -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#enables">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#final_Activity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#final_Activity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#hasDurationDescription -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#hasDurationDescription">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#has_Elaboration -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#has_Elaboration">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#has_Resource -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#has_Resource">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#has_SubActivity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#has_SubActivity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#initial_Activity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#initial_Activity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#next_Activity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#next_Activity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#status -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/activity.owl#status">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Activity -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Activity">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#has_Elaboration"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#has_SubActivity"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#next_Activity"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#causes"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#final_Activity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#initial_Activity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#completed"/>
+                    <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#dormant"/>
+                    <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#executing"/>
+                    <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#reExecuting"/>
+                    <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#suspended"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#ActivityThing -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#CompositeProduce -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#CompositeProduce">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Conjunction -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Conjunction">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#conjunct"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Consume -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Consume">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#DiscreteConsume -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#DiscreteConsume">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Consume"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#DiscreteProduce -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#DiscreteProduce">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Produce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#DiscreteUse -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#DiscreteUse">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Disjunction -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Disjunction">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#disjunct"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Exclusive -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Exclusive">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Not -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Not">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Predicate -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Predicate">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Produce -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Produce">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Release -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Release">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Resource -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Resource">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#State -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#State">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#enables"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#StateStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#StateStatus -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#StateStatus">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#committed"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#completed"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#enabled"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#not_possible"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/activity.owl#possible"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#TerminalState -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#TerminalState">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#has_Resource"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#Use -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/activity.owl#Use">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#TerminalState"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#committed -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#committed">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#completed -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#completed">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#dormant -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#dormant">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#enabled -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#enabled">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#executing -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#executing">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#not_possible -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#not_possible">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#possible -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#possible">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#reExecuting -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#reExecuting">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/activity.owl#suspended -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/activity.owl#suspended">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

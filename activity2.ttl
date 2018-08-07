@@ -1,0 +1,341 @@
+@prefix : <http://ontology.eil.utoronto.ca/activity.owl> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <http://ontology.eil.utoronto.ca/activity.owl> .
+
+<http://ontology.eil.utoronto.ca/activity.owl> rdf:type owl:Ontology ;
+                                                adms:relatedDocumentation """Gruninger, M., and Fox, M.S. , (1994), “An Activity Ontology for Enterprise Modelling”, Workshop on Enabling Technologies – Infrastructures for Collaborative Enterprises , West Virginia University.
+http://www.eil.utoronto.ca/wp-content/uploads/enterprise-modelling/papers/gruninger-wetice94-act.pdf""" ;
+                                                terms:description """TOVE Activity Ontology as defined in:
+
+Fox, M., Chionglo, J.F., and Fadel, F.G., (1993), \"A Common Sense Model of the Enterprise\", Proceedings of the 2nd Industrial Engineering Research Conference , pp. 425-429, Norcross GA: Institute for Industrial Engineers."""^^xsd:string ;
+                                                vann:preferredNamespacePrefix "act" ;
+                                                terms:creator "Mark S. Fox (msf"@eil.utoronto.ca) .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/adms#relatedDocumentation
+adms:relatedDocumentation rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/activity.owl#activityObjectProperty
+:activityObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#causes
+:causes rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#conjunct
+:conjunct rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#disjunct
+:disjunct rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#enables
+:enables rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#final_Activity
+:final_Activity rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#hasDurationDescription
+:hasDurationDescription rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#has_Elaboration
+:has_Elaboration rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#has_Resource
+:has_Resource rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#has_SubActivity
+:has_SubActivity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#initial_Activity
+:initial_Activity rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#next_Activity
+:next_Activity rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :activityObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#status
+:status rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :activityObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf :ActivityThing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_Elaboration ;
+                            owl:allValuesFrom :Activity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_SubActivity ;
+                            owl:allValuesFrom :Activity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :next_Activity ;
+                            owl:allValuesFrom :Activity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :status ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ActivityStatus
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :causes ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :State
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :final_Activity ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Activity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :initial_Activity ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Activity
+                          ] ;
+          owl:disjointWith :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#ActivityStatus
+:ActivityStatus rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :completed
+                                                  :dormant
+                                                  :executing
+                                                  :reExecuting
+                                                  :suspended
+                                                )
+                                    ] ;
+                rdfs:subClassOf :ActivityThing .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#ActivityThing
+:ActivityThing rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#CompositeProduce
+:CompositeProduce rdf:type owl:Class ;
+                  rdfs:subClassOf :Non_TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Conjunction
+:Conjunction rdf:type owl:Class ;
+             rdfs:subClassOf :Non_TerminalState ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :conjunct ;
+                               owl:allValuesFrom :State
+                             ] .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Consume
+:Consume rdf:type owl:Class ;
+         rdfs:subClassOf :TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#DiscreteConsume
+:DiscreteConsume rdf:type owl:Class ;
+                 rdfs:subClassOf :Consume .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#DiscreteProduce
+:DiscreteProduce rdf:type owl:Class ;
+                 rdfs:subClassOf :Produce .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#DiscreteUse
+:DiscreteUse rdf:type owl:Class ;
+             rdfs:subClassOf :Use .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Disjunction
+:Disjunction rdf:type owl:Class ;
+             rdfs:subClassOf :Non_TerminalState ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :disjunct ;
+                               owl:allValuesFrom :State
+                             ] .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Exclusive
+:Exclusive rdf:type owl:Class ;
+           rdfs:subClassOf :Non_TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Non_TerminalState
+:Non_TerminalState rdf:type owl:Class ;
+                   rdfs:subClassOf :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Not
+:Not rdf:type owl:Class ;
+     rdfs:subClassOf :Non_TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Predicate
+:Predicate rdf:type owl:Class ;
+           rdfs:subClassOf :TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Produce
+:Produce rdf:type owl:Class ;
+         rdfs:subClassOf :TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Release
+:Release rdf:type owl:Class ;
+         rdfs:subClassOf :TerminalState .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:subClassOf :ActivityThing .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :ActivityThing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :enables ;
+                         owl:allValuesFrom :Activity
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :status ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :StateStatus
+                       ] .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#StateStatus
+:StateStatus rdf:type owl:Class ;
+             rdfs:subClassOf :ActivityThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :status ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( :committed
+                                                         :completed
+                                                         :enabled
+                                                         :not_possible
+                                                         :possible
+                                                       )
+                                           ]
+                             ] .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#TerminalState
+:TerminalState rdf:type owl:Class ;
+               rdfs:subClassOf :State ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :has_Resource ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Resource
+                               ] .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#Use
+:Use rdf:type owl:Class ;
+     rdfs:subClassOf :TerminalState .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/activity.owl#committed
+:committed rdf:type owl:NamedIndividual ,
+                    :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#completed
+:completed rdf:type owl:NamedIndividual ,
+                    :ActivityStatus .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#dormant
+:dormant rdf:type owl:NamedIndividual ,
+                  :ActivityStatus .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#enabled
+:enabled rdf:type owl:NamedIndividual ,
+                  :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#executing
+:executing rdf:type owl:NamedIndividual ,
+                    :ActivityStatus .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#not_possible
+:not_possible rdf:type owl:NamedIndividual ,
+                       :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#possible
+:possible rdf:type owl:NamedIndividual ,
+                   :State .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#reExecuting
+:reExecuting rdf:type owl:NamedIndividual ,
+                      :ActivityStatus .
+
+
+###  http://ontology.eil.utoronto.ca/activity.owl#suspended
+:suspended rdf:type owl:NamedIndividual ,
+                    :ActivityStatus .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
