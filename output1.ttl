@@ -191,6 +191,30 @@ ns3:test_activity3 a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
     ns3:has_Department ns3:Water ;
     ns3:has_TimeInterval ns3:test_activity3_timeInterval .
 
+ns3:test_permits_jan_activity a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Permits ;
+    ns3:has_TimeInterval ns3:test_permits_jan_activity_timeInterval .
+
+ns3:test_police_jan_activity a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Police ;
+    ns3:has_TimeInterval ns3:test_police_jan_activity_timeInterval .
+
+ns3:test_web_back_Activ a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Business ;
+    ns3:has_TimeInterval ns3:test_web_back_Activ_timeInterval .
+
+ns3:test_web_inti3_Activity a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Business ;
+    ns3:has_TimeInterval ns3:test_web_inti3_Activity_timeInterval .
+
+ns3:test_web_inti_Activ_b a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Business ;
+    ns3:has_TimeInterval ns3:test_web_inti_Activ_b_timeInterval .
+
+ns3:test_web_policyi_Activity a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
+    ns3:has_Department ns3:Business ;
+    ns3:has_TimeInterval ns3:test_web_policyi_Activity_timeInterval .
+
 ns3:test_web_third_Activity a <http://ontology.eil.utoronto.ca/activity.owl#Activity> ;
     ns3:has_Department ns3:Permits ;
     ns3:has_TimeInterval ns3:test_web_third_Activity_timeInterval .
@@ -1092,6 +1116,288 @@ ns3:test_activity3_timeInterval a ns1:CDateTimeInterval ;
     ns1:hasDuration ns3:test_activity3_duration ;
     ns1:hasEnd ns3:test_activity3_end .
 
+ns3:test_permits_jan_activity_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_permits_jan_activity_duration_max ;
+    ns2:hasMin ns3:test_permits_jan_activity_duration_min .
+
+ns3:test_permits_jan_activity_duration_max a ns1:DateTimeDescription ;
+    ns1:day 15 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_permits_jan_activity_duration_min a ns1:DateTimeDescription ;
+    ns1:day 12 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_permits_jan_activity_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_permits_jan_activity_end_max ;
+    ns2:hasMin ns3:test_permits_jan_activity_end_min .
+
+ns3:test_permits_jan_activity_end_max a ns1:DateTimeDescription ;
+    ns1:day 16 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_permits_jan_activity_end_min a ns1:DateTimeDescription ;
+    ns1:day 15 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_permits_jan_activity_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_permits_jan_activity_start_max ;
+    ns2:hasMin ns3:test_permits_jan_activity_start_min .
+
+ns3:test_permits_jan_activity_start_max a ns1:DateTimeDescription ;
+    ns1:day 12 ;
+    ns1:month 1 ;
+    ns1:year 2019 .
+
+ns3:test_permits_jan_activity_start_min a ns1:DateTimeDescription ;
+    ns1:day 11 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_permits_jan_activity_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_permits_jan_activity_start ;
+    ns1:hasDuration ns3:test_permits_jan_activity_duration ;
+    ns1:hasEnd ns3:test_permits_jan_activity_end .
+
+ns3:test_police_jan_activity_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_police_jan_activity_duration_max ;
+    ns2:hasMin ns3:test_police_jan_activity_duration_min .
+
+ns3:test_police_jan_activity_duration_max a ns1:DateTimeDescription ;
+    ns1:day 8 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_duration_min a ns1:DateTimeDescription ;
+    ns1:day 5 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_police_jan_activity_end_max ;
+    ns2:hasMin ns3:test_police_jan_activity_end_min .
+
+ns3:test_police_jan_activity_end_max a ns1:DateTimeDescription ;
+    ns1:day 9 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_end_min a ns1:DateTimeDescription ;
+    ns1:day 8 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_police_jan_activity_start_max ;
+    ns2:hasMin ns3:test_police_jan_activity_start_min .
+
+ns3:test_police_jan_activity_start_max a ns1:DateTimeDescription ;
+    ns1:day 5 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_start_min a ns1:DateTimeDescription ;
+    ns1:day 4 ;
+    ns1:month 1 ;
+    ns1:year 2018 .
+
+ns3:test_police_jan_activity_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_police_jan_activity_start ;
+    ns1:hasDuration ns3:test_police_jan_activity_duration ;
+    ns1:hasEnd ns3:test_police_jan_activity_end .
+
+ns3:test_web_back_Activ_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_back_Activ_duration_max ;
+    ns2:hasMin ns3:test_web_back_Activ_duration_min .
+
+ns3:test_web_back_Activ_duration_max a ns1:DateTimeDescription ;
+    ns1:day 7 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_duration_min a ns1:DateTimeDescription ;
+    ns1:day 19 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_back_Activ_end_max ;
+    ns2:hasMin ns3:test_web_back_Activ_end_min .
+
+ns3:test_web_back_Activ_end_max a ns1:DateTimeDescription ;
+    ns1:day 16 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_end_min a ns1:DateTimeDescription ;
+    ns1:day 17 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_back_Activ_start_max ;
+    ns2:hasMin ns3:test_web_back_Activ_start_min .
+
+ns3:test_web_back_Activ_start_max a ns1:DateTimeDescription ;
+    ns1:day 31 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_start_min a ns1:DateTimeDescription ;
+    ns1:day 4 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_back_Activ_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_web_back_Activ_start ;
+    ns1:hasDuration ns3:test_web_back_Activ_duration ;
+    ns1:hasEnd ns3:test_web_back_Activ_end .
+
+ns3:test_web_inti3_Activity_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti3_Activity_duration_max ;
+    ns2:hasMin ns3:test_web_inti3_Activity_duration_min .
+
+ns3:test_web_inti3_Activity_duration_max a ns1:DateTimeDescription ;
+    ns1:day 23 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_duration_min a ns1:DateTimeDescription ;
+    ns1:day 18 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti3_Activity_end_max ;
+    ns2:hasMin ns3:test_web_inti3_Activity_end_min .
+
+ns3:test_web_inti3_Activity_end_max a ns1:DateTimeDescription ;
+    ns1:day 24 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_end_min a ns1:DateTimeDescription ;
+    ns1:day 19 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti3_Activity_start_max ;
+    ns2:hasMin ns3:test_web_inti3_Activity_start_min .
+
+ns3:test_web_inti3_Activity_start_max a ns1:DateTimeDescription ;
+    ns1:day 11 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_start_min a ns1:DateTimeDescription ;
+    ns1:day 9 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti3_Activity_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_web_inti3_Activity_start ;
+    ns1:hasDuration ns3:test_web_inti3_Activity_duration ;
+    ns1:hasEnd ns3:test_web_inti3_Activity_end .
+
+ns3:test_web_inti_Activ_b_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti_Activ_b_duration_max ;
+    ns2:hasMin ns3:test_web_inti_Activ_b_duration_min .
+
+ns3:test_web_inti_Activ_b_duration_max a ns1:DateTimeDescription ;
+    ns1:day 29 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti_Activ_b_duration_min a ns1:DateTimeDescription ;
+    ns1:day 3 ;
+    ns1:month 2 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti_Activ_b_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti_Activ_b_end_max ;
+    ns2:hasMin ns3:test_web_inti_Activ_b_end_min .
+
+ns3:test_web_inti_Activ_b_end_max a ns1:DateTimeDescription ;
+    ns1:day 23 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti_Activ_b_end_min a ns1:DateTimeDescription ;
+    ns1:day 9 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti_Activ_b_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_inti_Activ_b_start_max ;
+    ns2:hasMin ns3:test_web_inti_Activ_b_start_min .
+
+ns3:test_web_inti_Activ_b_start_max a ns1:DateTimeDescription ;
+    ns1:day 10 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_inti_Activ_b_start_min a ns1:DateTimeDescription ;
+    ns1:day 2 ;
+    ns1:month 3 ;
+    ns1:year 2088 .
+
+ns3:test_web_inti_Activ_b_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_web_inti_Activ_b_start ;
+    ns1:hasDuration ns3:test_web_inti_Activ_b_duration ;
+    ns1:hasEnd ns3:test_web_inti_Activ_b_end .
+
+ns3:test_web_policyi_Activity_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_policyi_Activity_duration_max ;
+    ns2:hasMin ns3:test_web_policyi_Activity_duration_min .
+
+ns3:test_web_policyi_Activity_duration_max a ns1:DateTimeDescription ;
+    ns1:day 22 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_duration_min a ns1:DateTimeDescription ;
+    ns1:day 16 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_end a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_policyi_Activity_end_max ;
+    ns2:hasMin ns3:test_web_policyi_Activity_end_min .
+
+ns3:test_web_policyi_Activity_end_max a ns1:DateTimeDescription ;
+    ns1:day 17 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_end_min a ns1:DateTimeDescription ;
+    ns1:day 9 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_start a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
+    ns2:hasMax ns3:test_web_policyi_Activity_start_max ;
+    ns2:hasMin ns3:test_web_policyi_Activity_start_min .
+
+ns3:test_web_policyi_Activity_start_max a ns1:DateTimeDescription ;
+    ns1:day 14 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_start_min a ns1:DateTimeDescription ;
+    ns1:day 11 ;
+    ns1:month 8 ;
+    ns1:year 2018 .
+
+ns3:test_web_policyi_Activity_timeInterval a ns1:CDateTimeInterval ;
+    ns1:hasBeginning ns3:test_web_policyi_Activity_start ;
+    ns1:hasDuration ns3:test_web_policyi_Activity_duration ;
+    ns1:hasEnd ns3:test_web_policyi_Activity_end .
+
 ns3:test_web_third_Activity_duration a <http://ontology.eil.utoronto.ca/TOVE2/ctime.rdf#CDateTimeInstant> ;
     ns2:hasMax ns3:test_web_third_Activity_duration_max ;
     ns2:hasMin ns3:test_web_third_Activity_duration_min .
@@ -1436,9 +1742,6 @@ ns3:Apr_16 a owl:NamedIndividual,
     ns1:month 4 ;
     ns1:year 2018 .
 
-ns3:Business a ns3:Department,
-        owl:NamedIndividual .
-
 ns3:Jan_6 a owl:NamedIndividual,
         ns1:DateTimeDescription ;
     ns1:day 6 ;
@@ -1457,12 +1760,6 @@ ns3:June_10 a owl:NamedIndividual,
     ns1:month 6 ;
     ns1:year 2018 .
 
-ns3:Permits a ns3:Department,
-        owl:NamedIndividual .
-
-ns3:Police a ns3:Department,
-        owl:NamedIndividual .
-
 ns3:Feb_10 a owl:NamedIndividual,
         ns1:DateTimeDescription ;
     ns1:day 10 ;
@@ -1474,6 +1771,12 @@ ns3:Jan_9 a owl:NamedIndividual,
     ns1:day 9 ;
     ns1:month 1 ;
     ns1:year 2018 .
+
+ns3:Permits a ns3:Department,
+        owl:NamedIndividual .
+
+ns3:Police a ns3:Department,
+        owl:NamedIndividual .
 
 ns3:Power a ns3:Department,
         owl:NamedIndividual .
@@ -1509,6 +1812,9 @@ ns3:Feb_15 a owl:NamedIndividual,
     ns1:year 2018 .
 
 ns3:Water a ns3:Department,
+        owl:NamedIndividual .
+
+ns3:Business a ns3:Department,
         owl:NamedIndividual .
 
 ns3:Department a owl:Class ;

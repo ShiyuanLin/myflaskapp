@@ -143,6 +143,40 @@ def IntervalContatins(g,I1_beginning_min,I1_end_max,
     return False
 
 
+# check if interval I1 overlaps interval I2.
+# I1 overlaps I2 when I1_start < I2_start and I1_end > I2_end and I1_end < I2_end.
+# i.e., I1_start_max < I2_start_min and I1_end_min > I2_start_max and I1_end_max < I2_end_min
+def intervalOverlaps(g,I1,I2):
+    I1_start = g.value(subject=rdflib.URIRef(I1),predicate=hasBeginning)
+    I1_start_max = g.value(subject = rdflib.URIRef(I1_start),predicate=hasMax)
+
+    I1_end = g.value(subject=rdflib.URIRef(I1),predicate=hasEnd)
+    I1_end_min = g.value(subject=rdflib.URIRef(I1_end),predicate=hasMin)
+    I1_end_max = g.value(subject=rdflib.URIRef(I1_end),predicate=hasMax)
+
+    I2_start = g.value(subject=rdflib.URIRef(I2),predicate=hasBeginning)
+    I2_start_min = g.value(subject=rdflib.URIRef(I2_start),predicate=hasMin)
+    I2_start_max = g.value(subject=rdflib.URIRef(I2_start),predicate=hasMax)
+
+    I2_end = g.value(subject=rdflib.URIRef(I2),predicate=hasEnd)
+    I2_end_min = g.value(subject=rdflib.URIRef(I2_end),predicate=hasMin)
+
+    I1_start_max_dtdc =  DateTimeDescription.DateTimeDescription(g, I1_start_max)
+    I1_end_min_dtdc =  DateTimeDescription.DateTimeDescription(g, I1_end_min)
+    I1_end_max_dtdc =  DateTimeDescription.DateTimeDescription(g, I1_end_max)
+    I2_start_min_dtdc =  DateTimeDescription.DateTimeDescription(g, I2_start_min)
+    I2_start_max_dtdc =  DateTimeDescription.DateTimeDescription(g, I2_start_max)
+    I2_end_min_dtdc =  DateTimeDescription.DateTimeDescription(g, I2_end_min)
+
+    if (I2_start_min_dtdc.greaterthan(I1_start_max_dtdc) and I1_end_min_dtdc.greaterthan(I2_start_max_dtdc) and I2_end_min_dtdc.greaterthan(I1_end_max_dtdc)):
+        return True
+
+    return False
+
+
+
+
+
 # check is that all the departments have satisfied schedule
 def check_include_all_departments(g,activities_in_timeInterval):
     deparments = [Water, Sewage, Power, Permits, Police, Transportation, Business]
@@ -199,7 +233,10 @@ def TAC_find_contractor_start(g,activities):
         if min_date.greaterthan(act_lst[j]):
             min_date = act_lst[j]
     print "the contractor strat is:", act_dic[min_date]
-    return act_dic[min_date]
+    y = g.value(subject=act_dic[min_date],predicate=time.year)
+    m = g.value(subject=act_dic[min_date],predicate=time.month)
+    d = g.value(subject=act_dic[min_date],predicate=time.day)
+    return (y,m,d)
 
 
 
@@ -221,35 +258,24 @@ def TAC_find_contractor_end(g,activities):
         if act_lst[j].greaterthan(max_date):
             max_date = act_lst[j]
     print "the contractor end is:", act_dic[max_date]
-    return act_dic[max_date]
+    y = g.value(subject=act_dic[max_date],predicate=time.year)
+    m = g.value(subject=act_dic[max_date],predicate=time.month)
+    d = g.value(subject=act_dic[max_date],predicate=time.day)
+    return (y,m,d)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-def main():
-    print('Starting main')
-
+def TAC(start_min_year,start_min_month,start_min_day,start_max_year,start_max_month,start_max_day,end_min_year,end_min_month,end_min_day,end_max_year,end_max_month,end_max_day):
     logging.basicConfig(filename='myapp.log', level=logging.INFO)
-    logging.info(' ctime Started')
+    logging.info('ctime Started')
 
     g = Graph()
     # load tove2 examples
-    test2 = rdflib.Namespace('example.ttl#')
-    g.parse('example.ttl#', format="turtle")
+    test2 = rdflib.Namespace('output1.ttl#')
+    g.parse('output1.ttl#', format="turtle")
 
     print 'the length of ttl file is:',len(g)
 
-    logging.info('ctime Finished')
 
     # namespace for predicate
     hasBeginning = rdflib.URIRef('http://www.w3.org/2006/time#hasBeginning')
@@ -261,8 +287,8 @@ def main():
 
     #============input the contractor's time interval here======================
     # here we input the contract time interval starts between:(2018,2,1)-(2018,2,5), ends between:(2018,2,20)-(2018,2,25)
-    add_contractor_timeInterval(g, [2018,2,1,time.unitDay], [2018,2,5,time.unitDay], [2018,2,20,time.unitDay], [2018,2,25,time.unitDay])
-    # add_contractor_timeInterval(g, [2018, 8, 1, time.unitDay],[2018, 8, 5, time.unitDay],[2018, 8, 20, time.unitDay],[2018, 8, 25, time.unitDay])
+    # add_contractor_timeInterval(g, [2018,2,1,time.unitDay], [2018,2,5,time.unitDay], [2018,2,20,time.unitDay], [2018,2,25,time.unitDay])
+    add_contractor_timeInterval(g, [start_min_year,start_min_month,start_min_day,time.unitDay],[start_max_year,start_max_month,start_max_day,time.unitDay],[end_min_year,end_min_month,end_min_day,time.unitDay],[end_max_year,end_max_month,end_max_day, time.unitDay])
 
     print "after adding the contractor time interval, the length is", len(g)
     contractor_start = g.value(subject=rdflib.URIRef(
@@ -324,44 +350,76 @@ def main():
         # check if these activities include all the departments
         print "Step 3: Check if thses activities include all the deparment."
         if (check_include_all_departments(g, activities_in_timeInterval)):
-            # print "These activities include all the departments."
+            print "These activities include all the departments."
+
+            # step4: check is there are any overlaps between these activities
+            print "Step 4: Check if there are any overlaps between activities"
+            act_lst = activities_in_timeInterval.keys()
+            for i in range(0,len(act_lst) - 2):
+                for j in range(i+1,len(act_lst)-1):
+                    if intervalOverlaps(g,activities_in_timeInterval[act_lst[i]],activities_in_timeInterval[act_lst[j]]) or intervalOverlaps(g,activities_in_timeInterval[act_lst[j]],activities_in_timeInterval[act_lst[i]]):
+                        a = act_lst[i].split("#")[-1]
+                        b = act_lst[j].split("#")[-1]
+                        message = "{},{} overlaps".format(a,b)
+                        print "Thses is no feasible interval for the contractor."
+                        g.close()
+                        return (None,message, act_lst[i], act_lst[j])
+
 
             # check if sewage activity is before water, i.e. sewage's duration is before water's duration
-            print "Step 4: Check if sewage activity is before water activity."
+            print "Step 5: Check if sewage activity is before water activity."
             for act in activities_in_timeInterval:
                 if (g.value(subject=act, predicate=hasDepartment) == Sewage):
+                    water_act = act
                     sewage_interval = activities_in_timeInterval[act]
                 if (g.value(subject=act, predicate=hasDepartment) == Water):
+                    sewage_act = act
                     water_interval = activities_in_timeInterval[act]
 
             if intervalBefore(g,sewage_interval,water_interval):
                 print "Sewage is before Water.\n"
 
-                print "Step 5: Find the exact start and end date for contractor accroding the activities' schedule."
+                print "Step 6: Find the exact start and end date for contractor accroding the activities' schedule."
                 # finally, we need to get restrain the start and end of the contractor' time interval into a specific date, and also as short as possible.
                 res_start = TAC_find_contractor_start(g, activities_in_timeInterval)
+                res_a = ''
+                for i in res_start:
+                    res_a += str(i) + '-'
                 res_end = TAC_find_contractor_end(g, activities_in_timeInterval)
-                g.serialize(destination='output1.ttl',format='turtle')
-                print "finish serializing"
-                return (res_start,res_end)
+                res_b = ''
+                for i in res_end:
+                    res_b += str(i) + '-'
+                message = "Interval found!"
+                g.close()
+                return ((res_a.strip('-'),res_b.strip('-')),message)
 
-    print "Thses is no feasible interval for the contractor."
-    g.serialize(destination='example.ttl', format='turtle')
-    print "finish serializing"
-    return None
-
-
-
-
-    g.close()
-    print('Ending main')
+            #sewage is not before water
+            else:
+                message = "Sewage activity:{} is not before wwater activity:{}".format(sewage_act,water_act)
+                g.close()
+                return (None,message, sewage_act, water_act)
 
 
-if __name__ == '__main__':
-    logging.basicConfig(filename='ctime.log', filemode='w',
-                    format='%(levelname)s %(asctime)s: %(message)s',
-                    level=logging.INFO)
-    main()
+        # these activities does not include all the department
+        else:
+            message = "activities does not include all the departments."
+            print "Thses is no feasible interval for the contractor."
+            g.close()
+            return (None,message)
+
+    # there is no activity in the contractor time interval
+    else:
+        message = "There is no activity during the contractor time interval."
+        print "Thses is no feasible interval for the contractor."
+        g.close()
+        return (None,message)
+
+
+
+
+# result = TAC(2018,2,1,2018,2,5,2018,2,20,2018,2,25)
+# print result
+
 
 
 

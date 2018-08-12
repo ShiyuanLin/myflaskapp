@@ -156,14 +156,43 @@ def get_activity_dic():
     g.parse('output1.ttl#', format="turtle")
 
     i=0
-    act_dic = {}
+    act_lst = []
     for act, dep in g.subject_objects(predicate=hasDepartment):
         act_name = act.split("#")[-1]
         dep_name = dep.split("#")[-1]
-        act_dic[act_name] = dep_name
+
+        timeInterval = g.value(rdflib.URIRef(act),hasTimeInterval)
+        start = g.value(rdflib.URIRef(timeInterval),hasBeginning)
+        start_min = g.value(rdflib.URIRef(start),hasMin)
+        start_min_year = g.value(rdflib.URIRef(start_min),time.year)
+        start_min_month = g.value(rdflib.URIRef(start_min), time.month)
+        start_min_day = g.value(rdflib.URIRef(start_min), time.day)
+        start_min_date = str(start_min_year) + '/' + str(start_min_month) + '/' + str(start_min_day)
+
+        start_max = g.value(rdflib.URIRef(start),hasMax)
+        start_max_year = g.value(rdflib.URIRef(start_max),time.year)
+        start_max_month = g.value(rdflib.URIRef(start_max), time.month)
+        start_max_day = g.value(rdflib.URIRef(start_max), time.day)
+        start_max_date = str(start_max_year) + '/' + str(start_max_month) + '/' + str(start_max_day)
+
+        end = g.value(rdflib.URIRef(timeInterval),hasEnd)
+        end_min = g.value(rdflib.URIRef(end),hasMin)
+        end_min_year = g.value(rdflib.URIRef(end_min),time.year)
+        end_min_month = g.value(rdflib.URIRef(end_min), time.month)
+        end_min_day = g.value(rdflib.URIRef(end_min), time.day)
+        end_min_date = str(end_min_year) + '/' + str(end_min_month) + '/' + str(end_min_day)
+
+        end_max = g.value(rdflib.URIRef(end), hasMax)
+        end_max_year = g.value(rdflib.URIRef(end_max), time.year)
+        end_max_month = g.value(rdflib.URIRef(end_max), time.month)
+        end_max_day = g.value(rdflib.URIRef(end_max), time.day)
+        end_max_date = str(end_max_year) + '/' + str(end_max_month) + '/' + str(end_max_day)
+
+        curr = [act_name,dep_name,start_min_date,start_max_date,end_min_date,end_max_date]
+        act_lst.append(curr)
 
     # print act_lst
-    return act_dic
+    return act_lst
 
     g.close()
     g.serialize(destination='output1.ttl', format='turtle')
@@ -248,11 +277,6 @@ def get_activity_detail(name):
 
 
 
-
-
-
-
-
 # check if the given name activity is already in the schedule.
 # return True if yes, False otherwise.
 def check_activity_name(g,name):
@@ -302,6 +326,27 @@ def main():
 
     # res = add_activity('test_activity', Water, 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
 
+    # q = 'Water_Oct_Activity'
+    # e = tove2_prefix+q
+    # q_interval = g.value(rdflib.URIRef(e),hasTimeInterval)
+
+    z = 'test_activity'
+    h = tove2_prefix+z
+    print g
+    z_interval = g.value(rdflib.URIRef(h),hasTimeInterval)
+
+    p = 'Water_Jan_Activity'
+    f = tove2_prefix+p
+    p_interval = g.value(rdflib.URIRef(f),hasTimeInterval)
+
+    print "========="
+    # print tove2.intervalOverlaps(g,q_interval,p_interval)
+    print tove2.intervalOverlaps(g,p_interval,z_interval)
+
+    print get_activity_dic()
+
+
+
 
 
 
@@ -327,23 +372,29 @@ def main():
 #     logging.basicConfig(filename='ctime.log', filemode='w',
 #                     format='%(levelname)s %(asctime)s: %(message)s',
 #                     level=logging.INFO)
-#     main()
 
-    # add_activity('test_activity', 'Water', 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
 
-    # add_activity('test_activity3', 'Water', 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
+# add_activity('test_activity', 'Water', 2018,1,5, 2018,1,7, 2018,1,13, 2018,1,14, 2018,1,7, 2018,1,13)
+# add_activity('test_police_jan_activity', 'Police', 2018,1,4, 2018,1,5, 2018,1,8, 2018,1,9, 2018,1,5, 2018,1,8)
+# add_activity('test_permits_jan_activity', 'Permits', 2018,1,11, 2018,1,12, 2018,1,15, 2018,1,16, 2018,1,12, 2018,1,15)
+# delete_activity('test_police_jan_activity')
+# delete_activity('test_permits_jan_activity')
+# main()
+
+
+
+
+# add_activity('test_activity3', 'Water', 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
 
 # delete_activity('test_activity')
 
-# a = get_activity_detail('Sewage_Apr_Activity')
-# for i in a:
-#     print i
 
-
-    # edit_activity('test_activity', 'test_activity2', Water, 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
+# edit_activity('test_activity', 'test_activity2', Water, 2017,1,1, 2017,1,5, 2017,2,1, 2017,2,5, 2017,1,5, 2017,2,1)
 
 # delete_activity('test_activity2')
 # delete_activity('test_activity3')
+
+
 
 
 

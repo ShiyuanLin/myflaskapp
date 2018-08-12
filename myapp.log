@@ -1,0 +1,124 @@
+INFO:root:ctime Started
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 419-049-819
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 419-049-819
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 419-049-819
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:06:31] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:06:31] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:08:30] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:08:30] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "POST /check_tac HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "GET /check_tac?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "GET /check_tac?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "GET /check_tac?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "GET /check_tac?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:15] "GET /check_tac?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:30] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:24:30] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:25:32] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:25:32] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:26:41] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:26:43] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:26:44] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:26:54] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 18:26:54] "GET /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:22:52] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:22:52] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:22:54] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:22] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:40] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:49] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:49] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:57] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:23:57] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:24:21] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:24:41] "POST /register HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:24:41] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:25:27] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:25:46] "POST /register HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:25:46] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:25:52] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:11] "POST /register HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:11] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:14] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:14] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:19] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:19] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:26:20] "GET /add_activity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:46] "POST /add_activity HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:46] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:49] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:49] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:59] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:27:59] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:28:01] "GET /add_activity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:23] "POST /add_activity HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:23] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:26] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:26] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:32] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:32] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:29:34] "GET /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:30:05] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:30:05] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/tove2.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:43:51] "POST /check_tac HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:43:51] "GET /check_tac HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:44:30] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:44:32] "GET /show_activity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 19:59:56] "GET /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:00:14] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:00:46] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:02:34] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:02:52] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:02:54] "POST /check_tac HTTP/1.1" 200 -
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:02:55] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/app.py', reloading
+INFO:root:ctime Started
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:03:25] "POST /check_tac HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:07:57] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:07:57] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:08:05] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:08:05] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:10:04] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:10:31] "GET /add_activity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:11:01] "POST /add_activity HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:11:01] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Aug/2018 20:11:06] "GET /dashboard HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/shiyuan/Desktop/Emily-research-API/myflaskapp/web_function.py', reloading
+INFO:root: ctime Started
+INFO:root: ctime Started

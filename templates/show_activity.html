@@ -5,11 +5,19 @@
   	<tr>
   		<th scope="col">Name</th>
   		<th scope="col">Department</th>
+  		<th scope="col">Start Min Date</th>
+  		<th scope="col">Start Max Date</th>
+  		<th scope="col">End Min Date</th>
+  		<th scope="col">End Max Date</th>
   	</tr>
-  	{% for k, v in content.items() %}
+  	{% for i in content %}
   	  <tr>
-  	  	<td>{{ k }}</td>
-  	  	<td>{{ v }}</td>
+  	  	<td>{{ i[0] }}</td>
+  	  	<td>{{ i[1] }}</td>
+  	  	<td>{{ i[2] }}</td>
+  	  	<td>{{ i[3] }}</td>
+  	  	<td>{{ i[4] }}</td>
+  	  	<td>{{ i[5] }}</td>
   	  </tr>
   	{% endfor %}
   </table>

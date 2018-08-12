@@ -2,19 +2,49 @@
 
 {% block body %}
   <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  {% if session['username'] == "admin" %}
+    <a class="btn btn-success" href="/register"> Sign Up new user</a>
+    <a class="btn btn-success" href="/check_tac"> Check TAC</a>
+  {% endif %}
   <a class="btn btn-success" href="/add_activity"> Add Activity</a>
   <a class="btn btn-success" href="/show_activity"> Show All Activities</a>
+
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>My Message</th>
+      <th>{% if session['username'] == "admin" %}Operation{% endif %}</th>
+      <th></th>
+    </tr>
+    {% for message in messages %}
+      <tr>
+        <td>{{message.activity}}</td>
+        <td>{{message.operation}}</td>         
+        <td><a href="/delete_message/{{message.id}}" class="btn btn-default" method="post">Dismiss</a></td>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
   <hr>
   <table class="table table-striped">
     <tr>
       <th>My Activity</th>
+      <th>Start Min Date</th>
+      <th>Start Max Date</th>
+      <th>End Min Date</th>
+      <th>End Max Date</th>
       <th></th>
       <th></th>
     </tr>
     {% for activity in activities %}
       <tr>
-        <td>{{activity.activity}}</td>
-        <td><a href="/edit_activity/{{activity.activity}}" class="btn btn-default">Edit</a></td>
+        <td>{{activity[0]}}</td>
+        <td>{{activity[1]}}</td>
+        <td>{{activity[2]}}</td>
+        <td>{{activity[3]}}</td>
+        <td>{{activity[4]}}</td>
+        <td><a href="/edit_activity/{{activity.activity}}" class="btn btn-default pull-right">Edit</a></td>
         <td><a href="/delete_activity/{{activity.activity}}" class="btn btn-default" method="post">Delete</a></td>
         </td>
       </tr>
@@ -22,12 +52,3 @@
   </table>
 {% endblock %}
 
-        <!-- <td>{{article.title}}</td>
-        <td>{{article.author}}</td>
-        <td>{{article.create_date}}</td>
-        <td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Edit</a></td>
-        <td>
-          <form action="{{url_for('delete_article', id=article.id)}}" method="post">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete" class="btn btn-danger">
-          </form> -->

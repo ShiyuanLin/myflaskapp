@@ -8,6 +8,7 @@ from passlib.hash import sha256_crypt
 from functools import wraps
 # from web_function import get_activity_dic
 import web_function
+import tove2
 
 app = Flask(__name__)
 
@@ -34,26 +35,6 @@ def about():
     return render_template('about.html')
 
 
-# Articles
-@app.route('/articles')
-def articles():
-    # Create cursor
-    cur = mysql.connection.cursor()
-
-    # Get articles
-    result = cur.execute("SELECT * FROM articles")
-
-    articles = cur.fetchall()
-
-    if result > 0:
-        return render_template('articles.html', articles=articles)
-    else:
-        msg = 'No Articles Found'
-        return render_template('articles.html', msg=msg)
-    # Close connection
-    cur.close()
-
-
 #Single Article
 @app.route('/article/<string:id>/')
 def article(id):
@@ -70,10 +51,7 @@ def article(id):
 
 # Register Form Class
 class RegisterForm(Form):
-    # name = StringField('Name', [validators.Length(min=1, max=50)])
-    # username = StringField('Username', [validators.Length(min=4, max=25)])
     email = StringField('Email', [validators.Length(min=6, max=80)])
-    # department = StringField('department', [validators.Length(min=6, max=80)])
     password = PasswordField('Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords do not match')
@@ -96,6 +74,12 @@ def register():
         cur = mysql.connection.cursor()
 
         # Execute query
+        result = cur.execute("SELECT * from users where username = %s", [email])
+        if result > 0:
+            error = 'Username has be taken'
+            cur.close()
+            return render_template('register.html', error=error, form=form)
+
         cur.execute("INSERT INTO users(username, department, password) VALUES(%s, %s, %s)", (email, department, password))
 
         # Commit to DB
@@ -106,7 +90,7 @@ def register():
 
         flash('You are now registered and can log in', 'success')
 
-        return redirect(url_for('login'))
+        return redirect(url_for('dashboard'))
     return render_template('register.html', form=form)
 
 
@@ -117,6 +101,14 @@ def login():
         # Get Form Fields
         username = request.form['username']
         password_candidate = request.form['password']
+
+        # Check if admin login
+        if username == "admin" and password_candidate == "admin":
+            session['logged_in'] = True
+            session['username'] = username
+
+            flash('Welcome back Admin', 'success')
+            return redirect(url_for('dashboard'))
 
         # Create cursor
         cur = mysql.connection.cursor()
@@ -129,6 +121,9 @@ def login():
             data = cur.fetchone()
             password = data['password']
 
+            # Close connection
+            cur.close()
+
             # Compare Passwords
             if sha256_crypt.verify(password_candidate, password):
                 # Passed
@@ -140,9 +135,10 @@ def login():
             else:
                 error = 'Invalid login'
                 return render_template('login.html', error=error)
+        else:
             # Close connection
             cur.close()
-        else:
+
             error = 'Username not found'
             return render_template('login.html', error=error)
 
@@ -174,19 +170,43 @@ def dashboard():
     # Create cursor
     cur = mysql.connection.cursor()
 
-    # Get articles
-    result = cur.execute("SELECT * FROM activities")
+    if session['username'] == 'admin':
+        # Get Activity
+        activity_res = cur.execute("SELECT * FROM activities")
+        activities = cur.fetchall()
 
-    activities = cur.fetchall()
-
-    if result > 0:
-        # return render_template('dashboard.html', articles=articles)
-        return render_template('dashboard.html', activities=activities)
+        # Get Message
+        message_res = cur.execute("SELECT * FROM inform_admin")
+        messages = cur.fetchall()
     else:
-        msg = 'No Articles Found'
-        return render_template('dashboard.html', msg=msg)
+        # Get Activity
+        activity_res = cur.execute("SELECT * FROM activities where username = %s", [session['username']])
+        activities = cur.fetchall()
+
+        # Get Message
+        message_res = cur.execute("SELECT * FROM inform_user where username= %s", [session['username']])
+        messages = cur.fetchall()
+
     # Close connection
     cur.close()
+    if activity_res > 0:
+        activities_detail = []
+        for activity in activities:
+            activity_detail = []
+            act_detail = web_function.get_activity_detail(activity['activity'   ])
+            activity_detail.append(activity['activity'])
+            activity_detail.append(act_detail[0] + '/' + act_detail[1] + '/' + act_detail[2])
+            activity_detail.append(act_detail[3] + '/' + act_detail[4] + '/' + act_detail[5])
+            activity_detail.append(act_detail[6] + '/' + act_detail[7] + '/' + act_detail[8])
+            activity_detail.append(act_detail[9] + '/' + act_detail[10] + '/' + act_detail[11])
+            activities_detail.append(activity_detail)
+        # print('e')
+        for detail in activities_detail:
+            print(detail)
+        return render_template('dashboard.html', activities=activities_detail, messages=messages)
+    else:
+        msg = 'No Articles Found'
+        return render_template('dashboard.html', msg=msg, messages=messages)
 
 
 # Activity Form Class
@@ -196,8 +216,8 @@ class ActivityForm(Form):
     max_time_start = DateField('Max Start Time', format='%Y-%m-%d')
     min_time_end = DateField('Min End Time', format='%Y-%m-%d')
     max_time_end = DateField('Max End Time', format='%Y-%m-%d')
-    duration_start = DateField('Duration Start Time', format='%Y-%m-%d')
-    duration_end = DateField('Duration End Time', format='%Y-%m-%d')
+    duration_start = DateField('Duration Min', format='%Y-%m-%d')
+    duration_end = DateField('Duration Max', format='%Y-%m-%d')
 
 # Add Activity
 @app.route('/add_activity', methods=['GET', 'POST'])
@@ -211,11 +231,14 @@ def add_activity():
         cur = mysql.connection.cursor()
         
         # Execute
-        cur.execute("SELECT id, department from users where username = %s", [session['username']])
-        result = cur.fetchone()
-        userid = result['id']
-        department = result['department']
-        cur.execute("INSERT INTO activities(user_id, activity) VALUES(%s, %s)", (userid, title))
+        if session['username'] == "admin":
+            department = request.form.getlist('department')
+        else:
+            cur.execute("SELECT department from users where username = %s", [session['username']])
+            result = cur.fetchone()
+            department = result['department']
+            cur.execute("INSERT INTO inform_admin(operation, activity) VALUES('Add', %s)", [title])
+        cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", (session['username'], title))
         # Add to RDF
         web_function.add_activity(title, department, 
             form.min_time_start.data.year, form.min_time_start.data.month, form.min_time_start.data.day, 
@@ -238,11 +261,11 @@ def add_activity():
     return render_template('add_activity.html', form=form)
 
 
+
 # Show All Activities
 @app.route('/show_activity')
 @is_logged_in
 def show_activity():
-    # test_content = {'department1': 'title1', 'department2': 'title2'}
     test_content = web_function.get_activity_dic()
     return render_template('show_activity.html', content=test_content)
 
@@ -257,6 +280,8 @@ def delete_activity(title):
 
     # Execute
     cur.execute("DELETE FROM activities WHERE activity = %s", [title])
+    if session['username'] != "admin":
+        cur.execute("INSERT INTO inform_admin(operation, activity) VALUES('Delete', %s)", [title])
 
     # Delete from RDF
     web_function.delete_activity(name)
@@ -276,7 +301,6 @@ def delete_activity(title):
 @app.route('/edit_activity/<string:title>', methods=['GET', 'POST'])
 @is_logged_in
 def edit_activity(title):
-    # print(web_function.get_activity_detail('Sewage_Apr_Activity'))
     [start_min_year, start_min_month, start_min_day, 
      start_max_year, start_max_month, start_max_day,
      end_min_year, end_min_month, end_min_day,
@@ -296,7 +320,7 @@ def edit_activity(title):
 
 
     if request.method == 'POST' and form.validate():
-        # title = form.title.data
+        username = session['username']
         min_time_start = datetime.strptime(request.form['min_time_start'], '%Y-%m-%d')
         max_time_start = datetime.strptime(request.form['max_time_start'], '%Y-%m-%d')
         min_time_end = datetime.strptime(request.form['min_time_end'], '%Y-%m-%d')
@@ -304,20 +328,28 @@ def edit_activity(title):
         duration_start = datetime.strptime(request.form['duration_start'], '%Y-%m-%d')
         duration_end = datetime.strptime(request.form['duration_end'], '%Y-%m-%d')
 
-        # print type(datetime.strptime(min_time_end, '%Y-%m-%d'))
-        # print(date(min_time_end))
-
-
         # Create Cursor
         cur = mysql.connection.cursor()
         
-        # Execute
+        # Execute        
+        if session['username'] == "admin":
+            cur.execute("SELECT username from activities where activity = %s", [title])
+            result = cur.fetchone()
+            username = result['username']
+
+            # Get Department
+            cur.execute("SELECT department from users where username = %s", [username])
+            result = cur.fetchone()
+            department = result['department']
+        else:
+            cur.execute("SELECT department from users where username = %s", [username])
+            result = cur.fetchone()
+            department = result['department']
+            cur.execute("INSERT INTO inform_admin(operation, activity) VALUES('Edit', %s)", [request.form['title']])
+        
         cur.execute("DELETE FROM activities where activity = %s", [title])
-        cur.execute("SELECT id, department from users where username = %s", [session['username']])
-        result = cur.fetchone()
-        userid = result['id']
-        department = result['department']
-        cur.execute("INSERT INTO activities(user_id, activity) VALUES(%s, %s)", (userid, request.form['title']))
+        cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", (username, request.form['title']))
+        
         # Add to RDF
         web_function.edit_activity(title, request.form['title'], department, 
             min_time_start.year, min_time_start.month, min_time_start.day, 
@@ -339,100 +371,81 @@ def edit_activity(title):
         return redirect(url_for('dashboard'))
     return render_template('edit_activity.html', form=form)
 
+# Delete Message
+@app.route('/delete_message/<string:message>', methods=['GET', 'POST'])
+@is_logged_in
+def delete_message(message):
+    # Create cursor
+    cur = mysql.connection.cursor()
+
+    # Execute
+    if session['username'] == 'admin':
+        cur.execute("DELETE FROM inform_admin WHERE id = %s", [message])
+    else:
+        cur.execute("DELETE FROM inform_user WHERE id = %s", [message])
+
+    # Commit to DB
+    mysql.connection.commit()
+
+    #Close connection
+    cur.close()
+
+    flash('Message Deleted', 'success')
+
+    return redirect(url_for('dashboard'))
 
 
-# Article Form Class
-# class ArticleForm(Form):
-#     title = StringField('Title', [validators.Length(min=1, max=200)])
-#     body = TextAreaField('Body', [validators.Length(min=30)])
-
-# Add Article
-# @app.route('/add_article', methods=['GET', 'POST'])
-# @is_logged_in
-# def add_article():
-#     form = ArticleForm(request.form)
-#     if request.method == 'POST' and form.validate():
-#         title = form.title.data
-#         body = form.body.data
-
-#         # Create Cursor
-#         cur = mysql.connection.cursor()
-
-#         # Execute
-#         cur.execute("INSERT INTO articles(title, body, author) VALUES(%s, %s, %s)",(title, body, session['username']))
-
-#         # Commit to DB
-#         mysql.connection.commit()
-
-#         #Close connection
-#         cur.close()
-
-#         flash('Article Created', 'success')
-
-#         return redirect(url_for('dashboard'))
-
-#     return render_template('add_article.html', form=form)
+# TAC Form Class
+class TacForm(Form):
+    min_time_start = DateField('Min Start Time', format='%Y-%m-%d') 
+    max_time_start = DateField('Max Start Time', format='%Y-%m-%d')
+    min_time_end = DateField('Min End Time', format='%Y-%m-%d')
+    max_time_end = DateField('Max End Time', format='%Y-%m-%d')
 
 
-# Edit Article
-# @app.route('/edit_article/<string:id>', methods=['GET', 'POST'])
-# @is_logged_in
-# def edit_article(id):
-#     # Create cursor
-#     cur = mysql.connection.cursor()
+# Check TAC
+@app.route('/check_tac', methods=['GET', 'POST'])
+@is_logged_in
+def check_tac():
+    form = TacForm(request.form)
+    if request.method == 'POST' and form.validate():
+        min_time_start = datetime.strptime(request.form['min_time_start'], '%Y-%m-%d')
+        max_time_start = datetime.strptime(request.form['max_time_start'], '%Y-%m-%d')
+        min_time_end = datetime.strptime(request.form['min_time_end'], '%Y-%m-%d')
+        max_time_end = datetime.strptime(request.form['max_time_end'], '%Y-%m-%d')
 
-#     # Get article by id
-#     result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
+        result = tove2.TAC(min_time_start.year, min_time_start.month, min_time_start.day, 
+            max_time_start.year, max_time_start.month, max_time_start.day,
+            min_time_end.year, min_time_end.month, min_time_end.day,
+            max_time_end.year, max_time_end.month, max_time_end.day)
 
-#     article = cur.fetchone()
-#     cur.close()
-#     # Get form
-#     form = ArticleForm(request.form)
 
-#     # Populate article form fields
-#     form.title.data = article['title']
-#     form.body.data = article['body']
+        if result[0] == None:
+            if len(result) == 4:
+                flash(result[1], 'danger')
+            # Inform user (The following code will throw exception if it cannot find the users.)
+            # You can uncomment the following code
+            # # Create cursor
+            # cur = mysql.connection.cursor()
 
-#     if request.method == 'POST' and form.validate():
-#         title = request.form['title']
-#         body = request.form['body']
+            # # Execute
+            # cur.execute("SELECT FROM activities where activity = %s", [result[2]])
+            # result = cur.fetchone()
+            # user1 = result['username']
+            # cur.execute("SELECT FROM activities where activity = %s", [result[3]])
+            # result = cur.fetchone()
+            # user2 = result['username']
+            # cur.execute("INSERT INTO inform_user(username, activity) VALUES(%s, %s)", [user1, result[2]])
+            # cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", [user2, result[3]])            
 
-#         # Create Cursor
-#         cur = mysql.connection.cursor()
-#         app.logger.info(title)
-#         # Execute
-#         cur.execute ("UPDATE articles SET title=%s, body=%s WHERE id=%s",(title, body, id))
-#         # Commit to DB
-#         mysql.connection.commit()
+            # Show Message
+            flash(result[1], 'danger')
+            # return redirect(url_for('check_tac'))
+        else:
+            flash("Start time: {}; End time: {}".format(result[0][0], result[0][1]), 'success')
 
-#         #Close connection
-#         cur.close()
+    return render_template('check_tac.html', form=form)
 
-#         flash('Article Updated', 'success')
-
-#         return redirect(url_for('dashboard'))
-
-#     return render_template('edit_article.html', form=form)
-
-# Delete Article
-# @app.route('/delete_article/<string:id>', methods=['POST'])
-# @is_logged_in
-# def delete_article(id):
-#     # Create cursor
-#     cur = mysql.connection.cursor()
-
-#     # Execute
-#     cur.execute("DELETE FROM articles WHERE id = %s", [id])
-
-#     # Commit to DB
-#     mysql.connection.commit()
-
-#     #Close connection
-#     cur.close()
-
-#     flash('Article Deleted', 'success')
-
-    # return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
     app.secret_key='secret123'
