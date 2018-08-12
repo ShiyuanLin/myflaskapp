@@ -431,7 +431,7 @@ def check_tac():
                 sql_result = cur.fetchone()
                 if sql_result != None:
                     user1 = sql_result['username']
-                    cur.execute("INSERT INTO inform_user(username, activity) VALUES(%s, %s)", [user1, result[2]])
+                    cur.execute("INSERT INTO inform_user(username, activity) VALUES(%s, %s)", [user1, result[1]])
                     flash("Informed {}".format(user1), 'success')
                 else:
                     flash("Cannot find the user of {}".format(result[2]), 'danger')
@@ -439,7 +439,7 @@ def check_tac():
                 sql_result = cur.fetchone()
                 if sql_result != None:
                     user2 = sql_result['username']
-                    cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", [user2, result[3]])
+                    cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", [user2, result[1]])
                     flash("Informed {}".format(user2), 'success')
                 else:
                     flash("Cannot find the user of {}".format(result[3]), 'danger')
