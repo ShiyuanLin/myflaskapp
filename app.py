@@ -423,23 +423,33 @@ def check_tac():
         if result[0] == None:
             if len(result) == 4:
                 flash(result[1], 'danger')
-            # Inform user (The following code will throw exception if it cannot find the users.)
-            # You can uncomment the following code
-            # # Create cursor
-            # cur = mysql.connection.cursor()
+                # Create cursor
+                cur = mysql.connection.cursor()
 
-            # # Execute
-            # cur.execute("SELECT FROM activities where activity = %s", [result[2]])
-            # result = cur.fetchone()
-            # user1 = result['username']
-            # cur.execute("SELECT FROM activities where activity = %s", [result[3]])
-            # result = cur.fetchone()
-            # user2 = result['username']
-            # cur.execute("INSERT INTO inform_user(username, activity) VALUES(%s, %s)", [user1, result[2]])
-            # cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", [user2, result[3]])            
-
-            # Show Message
-            flash(result[1], 'danger')
+                # Execute
+                cur.execute("SELECT * FROM activities where activity = %s", [result[2]])
+                sql_result = cur.fetchone()
+                if sql_result != None:
+                    user1 = sql_result['username']
+                    cur.execute("INSERT INTO inform_user(username, activity) VALUES(%s, %s)", [user1, result[2]])
+                    flash("Informed {}".format(user1), 'success')
+                else:
+                    flash("Cannot find the user of {}".format(result[2]), 'danger')
+                cur.execute("SELECT * FROM activities where activity = %s", [result[3]])
+                sql_result = cur.fetchone()
+                if sql_result != None:
+                    user2 = sql_result['username']
+                    cur.execute("INSERT INTO activities(username, activity) VALUES(%s, %s)", [user2, result[3]])
+                    flash("Informed {}".format(user2), 'success')
+                else:
+                    flash("Cannot find the user of {}".format(result[3]), 'danger')
+                
+                # Commit to DB
+                mysql.connection.commit()
+                cur.close()     
+            else:
+                # Show Message
+                flash(result[1], 'danger')
             # return redirect(url_for('check_tac'))
         else:
             flash("Start time: {}; End time: {}".format(result[0][0], result[0][1]), 'success')

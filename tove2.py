@@ -168,7 +168,7 @@ def intervalOverlaps(g,I1,I2):
     I2_start_max_dtdc =  DateTimeDescription.DateTimeDescription(g, I2_start_max)
     I2_end_min_dtdc =  DateTimeDescription.DateTimeDescription(g, I2_end_min)
 
-    if (I2_start_min_dtdc.greaterthan(I1_start_max_dtdc) and I1_end_min_dtdc.greaterthan(I2_start_max_dtdc) and I2_end_min_dtdc.greaterthan(I1_end_max_dtdc)):
+    if (not (I2_start_min_dtdc.lessthan(I1_start_max_dtdc)) and (not(I1_end_min_dtdc.lessthan(I2_start_max_dtdc)))):
         return True
 
     return False
@@ -363,7 +363,7 @@ def TAC(start_min_year,start_min_month,start_min_day,start_max_year,start_max_mo
                         message = "{},{} overlaps".format(a,b)
                         print "Thses is no feasible interval for the contractor."
                         g.close()
-                        return (None,message, act_lst[i], act_lst[j])
+                        return (None,message, a, b)
 
 
             # check if sewage activity is before water, i.e. sewage's duration is before water's duration
