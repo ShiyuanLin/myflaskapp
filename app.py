@@ -1,5 +1,4 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
-#from data import Articles
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from wtforms.fields.html5 import DateField
@@ -21,7 +20,6 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
 mysql = MySQL(app)
 
-#Articles = Articles()
 
 # Index
 @app.route('/')
@@ -33,20 +31,6 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-#Single Article
-@app.route('/article/<string:id>/')
-def article(id):
-    # Create cursor
-    cur = mysql.connection.cursor()
-
-    # Get article
-    result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
-
-    article = cur.fetchone()
-
-    return render_template('article.html', article=article)
 
 
 # Register Form Class
@@ -205,7 +189,7 @@ def dashboard():
             print(detail)
         return render_template('dashboard.html', activities=activities_detail, messages=messages)
     else:
-        msg = 'No Articles Found'
+        msg = 'No Activity Found'
         return render_template('dashboard.html', msg=msg, messages=messages)
 
 
@@ -297,7 +281,7 @@ def delete_activity(title):
     return redirect(url_for('dashboard'))
 
 
-# Edit Article
+# Edit Activity
 @app.route('/edit_activity/<string:title>', methods=['GET', 'POST'])
 @is_logged_in
 def edit_activity(title):
