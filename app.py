@@ -177,14 +177,13 @@ def dashboard():
         activities_detail = []
         for activity in activities:
             activity_detail = []
-            act_detail = web_function.get_activity_detail(activity['activity'   ])
+            act_detail = web_function.get_activity_detail(activity['activity'])
             activity_detail.append(activity['activity'])
             activity_detail.append(act_detail[0] + '/' + act_detail[1] + '/' + act_detail[2])
             activity_detail.append(act_detail[3] + '/' + act_detail[4] + '/' + act_detail[5])
             activity_detail.append(act_detail[6] + '/' + act_detail[7] + '/' + act_detail[8])
             activity_detail.append(act_detail[9] + '/' + act_detail[10] + '/' + act_detail[11])
             activities_detail.append(activity_detail)
-        # print('e')
         for detail in activities_detail:
             print(detail)
         return render_template('dashboard.html', activities=activities_detail, messages=messages)
